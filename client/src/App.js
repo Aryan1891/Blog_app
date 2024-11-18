@@ -8,6 +8,7 @@ import Register from './components/Register.js';
 import { UserContextProvider } from './UserContext.js';
 import CreatePost from './components/CreatePost.js';
 import Post from './components/Post.js';
+import EditPost from './components/Editpost.js';
 
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
         <Route path='/register' element={<Register/>}/>
         <Route path="/create" element={<CreatePost />} />
           <Route path="/post/:id" element={<Post />} />
-          {/* <Route path="/edit/:id" element={<EditPost />} /> */}
+          <Route path="/edit/:id" element={<EditPost />} />
       </Route>
     </Routes>
     </UserContextProvider>
