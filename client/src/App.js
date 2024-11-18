@@ -5,10 +5,14 @@ import Home from './components/Home.js';
 import {Route, Routes} from "react-router-dom";
 import Login from './components/Login.js';
 import Register from './components/Register.js';
+import { UserContextProvider } from './UserContext.js';
 
 
 function App() {
+  
   return (
+    <UserContextProvider>
+
     <Routes>
       <Route path='/' element={<Layout/>}> 
         <Route index element={<Home/>}/>
@@ -16,6 +20,8 @@ function App() {
         <Route path='/register' element={<Register/>}/>
       </Route>
     </Routes>
+    </UserContextProvider>
+
   );
 }
 

@@ -14,10 +14,18 @@ const secret="asdfasdfasndfklasdfrdflsadsf";
 app.use(cors({credentials:true,origin:'http://localhost:3000'}));
 app.use(express.json());
 
-
+app.use(cookieParser());
 
  mongoose.connect('mongodb+srv://aryanjangirofficial:aryanjangir@cluster0.cf2sx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
 );
+
+app.get('/profile', (req,res) => {
+    const {token} = req.cookies;
+    jwt.verify(token, secret, {}, (err,info) => {
+      if (err) throw err;
+      res.json(info);
+    });
+  });
 
 
 app.post('/register', async (req,res) => {
@@ -52,6 +60,10 @@ app.post('/register', async (req,res) => {
   });
 
 
+  app.post('/logout', (req,res) => {
+    res.cookie('token', '').json('ok');
+  });
+  
 
 
 
