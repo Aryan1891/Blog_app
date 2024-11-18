@@ -24,7 +24,7 @@ header a{
     color: inherit;
 }
 header a.logo{
-    font-weight: bold;
+    font-weight: bold; 
     font-size: 1.5rem;
 }
 header nav{
