@@ -3,12 +3,17 @@ main{
     max-width: 960px;
     margin: 0 auto;
 }
+img{
+    max-width: 100%;
+    border-radius: 8px;
+}
 header{
     display:flex;
     justify-content:space-between;
     margin-top: 20px;
     margin-bottom: 50px;
     align-items: center;
+   
 }
 header a{
     text-decoration:none;
@@ -22,3 +27,30 @@ header nav{
     display:flex;
     gap: 24px;
 }
+div.entry{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+div.entry div.text{
+    margin: 0;
+    font-size: 1.5rem;
+}
+div.entry p.info{
+    margin: 6px 0;
+    color: rgb(98, 86, 72);
+    font-size: 0.8rem;
+    font-weight: bold;
+    display: flex;
+    gap: 10px;
+}
+div.entry p.info a.author{
+    color: black;
+}
+
+div.entry p.description{
+    margin: 10px 0;
+    line-height: 1.5rem;
+} 
