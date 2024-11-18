@@ -30,7 +30,6 @@ export default function Header() {
         <a className='logo' href='/'>Rotary</a>
         <nav>
             <Link to="/">Home</Link>
-      <Link to="/" className="logo">MyBlog</Link>
      
         {username && (
           <>
