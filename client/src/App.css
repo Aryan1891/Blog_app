@@ -40,7 +40,7 @@ header a:hover{
     color: #781D42;
 }
 header a.logo{
-    font-weight: bold;
+    font-weight: bold; 
     font-size: 1.5rem;
     color: #781D42;
 }
