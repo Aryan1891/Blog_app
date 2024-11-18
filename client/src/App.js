@@ -8,17 +8,11 @@ function App() {
           MyBlog
         </a>
         <nav>
-          <ul>
-            <li>
-              <a href="">Home</a>
-            </li>
-            <li>
-              <a href="">Posts</a>
-            </li>
-            <li>
-              <a href="">About</a>
-            </li>
-          </ul>
+          
+              <a href="">Login</a>
+            
+              <a href="">Register</a>
+          
           </nav>
       </header>
     </main>
