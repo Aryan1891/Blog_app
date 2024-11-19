@@ -15,7 +15,7 @@ const HeroSection = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prevImage) => (prevImage + 1) % images.length);
-    }, 3000); // Change image every 3 seconds
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);
@@ -28,8 +28,8 @@ const HeroSection = () => {
         className="hero-image"
       />
       <div className="hero-overlay">
-        <h1>Welcome to Our Platform</h1>
-        <p>Explore the world of innovation and creativity</p>
+        <h1>Welcome to Rotary</h1>
+        <h3>Your ultimate destination for car enthusiasts. Explore the world of wheels, speed, and innovation with our expert-driven blogs!</h3>
       </div>
     </div>
   );

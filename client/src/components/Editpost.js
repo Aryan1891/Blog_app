@@ -46,19 +46,23 @@ export default function EditPost() {
   }
 
   return (
-    <form onSubmit={updatePost}>
+    <form className="edit-post-form" onSubmit={updatePost}>
+      <p>Enter Title:</p>
       <input type="title"
              placeholder={'Title'}
              value={title}
              onChange={ev => setTitle(ev.target.value)} />
+      <p>Edit Title:</p>
       <input type="summary"
              placeholder={'Summary'}
              value={summary}
              onChange={ev => setSummary(ev.target.value)} />
+      <p>Change Image:</p>
       <input type="file"
              onChange={ev => setFiles(ev.target.files)} />
+      <p>Edit Description:</p>
       <Editor onChange={setContent} value={content} />
-      <button style={{marginTop:'5px'}}>Update post</button>
+      <button className="button-17">Update Post</button>
     </form>
   );
 }

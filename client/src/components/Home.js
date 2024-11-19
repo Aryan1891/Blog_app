@@ -14,7 +14,6 @@ const Home = () => {
   return (
     
     <div>
-        
         <HeroSection/>
         {posts.length > 0 && posts.map(post => (
         <Post {...post} />
