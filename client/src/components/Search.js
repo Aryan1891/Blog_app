@@ -48,7 +48,7 @@ export default function Search() {
   }, [debouncedQuery]);
 
   return (
-    <div>
+    <div className='search-bar'>
       <input
         type="text"
         value={query}
