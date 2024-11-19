@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-
+import { Navigate } from 'react-router-dom';
 const Register = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [redirect, setRedirect] = useState(false);
 
   async function register(ev) {
     ev.preventDefault();
@@ -16,6 +17,9 @@ const Register = () => {
     })
 
     if(response.status === 200){
+     
+      setRedirect(true);
+
       alert('registration successful');
     }
     else{
@@ -24,7 +28,9 @@ const Register = () => {
    
   }
 
-
+  if(redirect){
+    return <Navigate to={'/'}/>
+  }
   
   return (
     <div className='register-card'>
