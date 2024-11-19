@@ -35,19 +35,23 @@ export default function CreatePost() {
     return <Navigate to={'/'} />
   }
   return (
-    <form onSubmit={createNewPost}>
+    <form className="edit-post-form" onSubmit={createNewPost}>
+      <h4>Enter Name of Car</h4>
       <input type="title"
              placeholder={'Car Name'}
              value={title}
              onChange={ev => setTitle(ev.target.value)} />
+      <h4>Enter Car Summary</h4>
       <input type="summary"
              placeholder={'Description'}
              value={summary}
              onChange={ev => setSummary(ev.target.value)} />
+      <h4>Upload Car Image</h4>
       <input type="file"
              onChange={ev => setFiles(ev.target.files)} />
+      <h4>Enter Car Description</h4>
       <Editor value={content} onChange={setContent} />
-      <button style={{marginTop:'5px'}}>Create post</button>
+      <button className="button-17" style={{marginTop:'5px'}}>Create Post</button>
     </form>
   );
 }

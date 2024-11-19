@@ -24,6 +24,8 @@ header{
     margin-bottom: 50px;
     align-items: center;
     width: 100%;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #781D42;
 }
 
 header img{
@@ -248,7 +250,7 @@ a svg{
   height:20px;
 }
 .edit-post-form {
-    max-width: 600px;
+    max-width: 850px;
     margin: 0 auto; /* Center the form on the page */
     padding: 20px;
     border: 1px solid #ccc;
