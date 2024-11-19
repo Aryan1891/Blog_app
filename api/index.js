@@ -34,13 +34,31 @@ app.get('/profile', (req,res) => {
     });
   });
 
-
+  app.get('/search/:query', async (req, res) => {
+    const { query } = req.params; // Get search query from the request params
+    if (!query) {
+      return res.json([]);
+    }
+    try {
+      const posts = await Post.find({
+        title: { $regex: query, $options: 'i' }, // Match title with the query (case-insensitive)
+      })
+        .populate('author', ['username']) // Populate author field with only the username
+        .sort({ createdAt: -1 }) // Sort by createdAt in descending order
+        .limit(20); // Limit the results to 20
+      res.json(posts);
+    } catch (error) {
+      res.status(500).json({ error: 'Error fetching posts' });
+    }
+  });
+  
 app.post('/register', async (req,res) => {
-    const {username,password} = req.body;
+    const {username,password,email} = req.body;
     try{
       const userDoc = await User.create({
         username,
         password:bcrypt.hashSync(password,salt),
+        email,
       });
       res.json(userDoc);
     } catch(e) {
@@ -86,7 +104,7 @@ app.post('/register', async (req,res) => {
       const postDoc = await Post.create({
         title,
         summary,
-        content,
+        content,  
         cover:newPath,
         author:info.id,
       });

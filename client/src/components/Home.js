@@ -1,23 +1,14 @@
 import React from 'react'
-import Post from '../Post'
-import HeroSection from './HeroSection'
-import {useEffect, useState} from "react";
+
+import Search from './Search';
 const Home = () => {
-  const [posts,setPosts] = useState([]);
-  useEffect(() => {
-    fetch('http://localhost:4000/post').then(response => {
-      response.json().then(posts => {
-        setPosts(posts);
-      });
-    });
-  }, []);
+  
   return (
     
     <div>
-        <HeroSection/>
-        {posts.length > 0 && posts.map(post => (
-        <Post {...post} />
-      ))}
+        
+        <Search/>
+        
     </div>
   )
 }

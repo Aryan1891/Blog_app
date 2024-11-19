@@ -3,6 +3,7 @@ import { Navigate } from 'react-router-dom';
 const Register = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
   const [redirect, setRedirect] = useState(false);
 
   async function register(ev) {
@@ -10,7 +11,7 @@ const Register = () => {
     
     const response = await fetch('http://localhost:4000/register',{
       method: 'POST',
-      body: JSON.stringify({username, password}),
+      body: JSON.stringify({username, password, email}),
       headers: {
         'Content-Type': 'application/json'
       }
@@ -44,6 +45,11 @@ const Register = () => {
             placeholder='Your Password'
             value={password}
             onChange={ev => setPassword(ev.target.value)}
+            />
+              <input type="text" 
+            placeholder='Your email'
+            value={email}
+            onChange={ev => setEmail(ev.target.value)}
             />
 
             
